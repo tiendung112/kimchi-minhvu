@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   Wedding Invitation — Luxury Minimalist & Romantic
+   Palette: Ivory (#FFFDFB) · Deep Sage Green (#4F6F52) · Champagne Gold (#D4AF37)
+   ========================================================================== */
+
+@layer base {
+  :root {
+    /* Surfaces */
+    --background: 36 60% 99%;          /* ivory */
+    --foreground: 130 18% 18%;         /* deep sage ink */
+
+    --card: 36 60% 99%;
+    --card-foreground: 130 18% 18%;
+
+    --popover: 36 60% 99%;
+    --popover-foreground: 130 18% 18%;
+
+    /* Brand */
+    --primary: 130 16% 37%;            /* deep sage green */
+    --primary-foreground: 36 60% 99%;
+    --primary-soft: 130 20% 92%;
+
+    --secondary: 36 40% 96%;
+    --secondary-foreground: 130 18% 18%;
+
+    --muted: 36 30% 94%;
+    --muted-foreground: 130 8% 38%;
+
+    --accent: 46 65% 52%;              /* champagne gold */
+    --accent-foreground: 130 25% 14%;
+    --accent-soft: 46 55% 88%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 36 60% 99%;
+
+    --border: 46 25% 85%;
+    --input: 46 20% 88%;
+    --ring: 130 16% 37%;
+
+    --radius: 0.25rem;
+
+    /* Gradients & shadows */
+    --gradient-gold: linear-gradient(90deg, transparent, hsl(var(--accent) / 0.7), transparent);
+    --gradient-overlay: linear-gradient(180deg, hsl(130 25% 10% / 0.15) 0%, hsl(130 25% 10% / 0.55) 100%);
+    --shadow-soft: 0 10px 40px -15px hsl(130 25% 14% / 0.18);
+    --shadow-card: 0 1px 0 hsl(var(--accent) / 0.25), 0 20px 50px -25px hsl(130 25% 14% / 0.22);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 130 20% 8%;
+    --foreground: 36 40% 96%;
+    --card: 130 20% 10%;
+    --card-foreground: 36 40% 96%;
+    --popover: 130 20% 10%;
+    --popover-foreground: 36 40% 96%;
+    --primary: 130 16% 60%;
+    --primary-foreground: 130 25% 10%;
+    --secondary: 130 15% 15%;
+    --secondary-foreground: 36 40% 96%;
+    --muted: 130 15% 15%;
+    --muted-foreground: 36 20% 70%;
+    --accent: 46 65% 60%;
+    --accent-foreground: 130 25% 10%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 36 40% 96%;
+    --border: 130 15% 20%;
+    --input: 130 15% 20%;
+    --ring: 46 65% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  section[id] {
+    scroll-margin-top: 1rem;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
+  .font-serif {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-feature-settings: 'liga', 'dlig';
+  }
+}
+
+@layer components {
+  .gold-divider {
+    @apply relative flex items-center justify-center gap-3 text-accent;
+  }
+  .gold-divider::before,
+  .gold-divider::after {
+    content: '';
+    @apply h-px w-16 sm:w-24;
+    background: var(--gradient-gold);
+  }
+
+  .gold-frame {
+    box-shadow:
+      0 0 0 1px hsl(var(--accent) / 0.4),
+      inset 0 0 0 1px hsl(var(--background)),
+      inset 0 0 0 2px hsl(var(--accent) / 0.4);
+  }
+
+  .text-gold-shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--accent) / 0.7) 0%,
+      hsl(46 80% 70%) 25%,
+      hsl(var(--accent)) 50%,
+      hsl(46 80% 70%) 75%,
+      hsl(var(--accent) / 0.7) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @apply animate-text-shimmer;
+  }
+
+  .lift-card {
+    @apply transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_25px_60px_-25px_hsl(130_25%_14%/0.35)];
+  }
+
+  .img-zoom {
+    @apply overflow-hidden;
+  }
+  .img-zoom > img {
+    @apply transition-transform ease-out hover:scale-[1.06];
+    transition-duration: 1200ms;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
