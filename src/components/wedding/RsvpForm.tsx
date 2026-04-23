@@ -175,7 +175,7 @@ export const RsvpForm = () => {
                         </FormLabel>
                         <FormControl>
                           <Input
-                            placeholder="Nguyễn Văn A"
+                            placeholder="Vũ Thị Kim Chi"
                             className="h-12 border-accent/30 bg-background"
                             autoComplete="name"
                             {...field}
@@ -198,7 +198,6 @@ export const RsvpForm = () => {
                           <Input
                             type="tel"
                             inputMode="tel"
-                            placeholder="0901234567"
                             className="h-12 border-accent/30 bg-background"
                             autoComplete="tel"
                             {...field}
