@@ -51,17 +51,18 @@ export const EventInfo = () => {
 
         <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
           <EventCard
-            title={ceremony.title}
-            time={ceremony.time}
-            address={ceremony.address}
-            delay={0}
-          />
-          <EventCard
             title={reception.title}
             time={reception.time}
             address={reception.address}
             delay={0.15}
           />
+          <EventCard
+            title={ceremony.title}
+            time={ceremony.time}
+            address={ceremony.address}
+            delay={0}
+          />
+          
         </div>
       </div>
     </section>
