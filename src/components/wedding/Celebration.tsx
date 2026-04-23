@@ -10,7 +10,7 @@ export const Celebration = () => {
         <SectionTitle
           eyebrow="Xác nhận tham dự"
           title="Gửi Lời Chúc"
-          subtitle="Sự hiện diện của quý khách là niềm vinh hạnh của hai gia đình. Xin vui lòng phản hồi trước ngày 30/11/2025."
+          subtitle="Sự hiện diện của quý khách là niềm vinh hạnh của hai gia đình. Xin vui lòng phản hồi trước ngày 30/04/2026."
         />
 
         {/* Mobile: gifts first then RSVP. Desktop: RSVP left, gifts right */}
